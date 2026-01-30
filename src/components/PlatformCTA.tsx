@@ -65,7 +65,7 @@ export const PlatformCTA = () => {
                         className="relative z-10 text-center lg:text-left"
                     >
                         <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
-                            Bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Blitz</span> to <br className="hidden lg:block" /> your workspace.
+                            Bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"><i>Blitz</i></span> to <br className="hidden lg:block" /> your workspace.
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -106,7 +106,7 @@ export const PlatformCTA = () => {
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="mt-8 flex flex-col lg:flex-row items-center lg:items-start gap-3">
-                            <Icon icon="solar:shield-check-linear" className="text-xl text-blue-400" />
+                            <Icon icon="solar:case-outline" className="text-xl text-blue-400" />
                             <span className="text-sm text-slate-500">
                                 Need a 200% secure corporate solution? <br className="hidden lg:block" />
                                 <a href="mailto:corporate@blitz-chat.com" className="text-blue-400 hover:text-blue-300 transition-colors">Deploy our app on your corporate server.</a>

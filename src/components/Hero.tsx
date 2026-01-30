@@ -25,7 +25,7 @@ export const Hero = () => {
         {
             id: 1,
             tag: "Real-time Messaging",
-            title: "Messaging at blitz \nspeed.",
+            title: "Messaging at Blitz \nspeed.",
             description: "Low latency communication for teams that move fast.",
             visual: "speed",
             color: "bg-blue-500"
@@ -105,7 +105,13 @@ export const Hero = () => {
 
                                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6">
                                     {slides[activeSlide].title.split('\n').map((line, i) => (
-                                        <span key={i} className="block">{line}</span>
+                                        <span key={i} className="block">
+                                            {line.split(/(Blitz)/).map((part, index) => (
+                                                part === 'Blitz'
+                                                    ? <i key={index} className="italic text-blue-400">{part}</i>
+                                                    : part
+                                            ))}
+                                        </span>
                                     ))}
                                 </h1>
 
