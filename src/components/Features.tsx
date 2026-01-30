@@ -131,7 +131,7 @@ export const Features = () => {
     }, []);
 
     return (
-        <section id="features" className="py-32 px-6 bg-blitz-bg relative z-0 overflow-hidden">
+        <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative z-0 overflow-hidden">
             {/* Beams Background */}
             <div className="absolute inset-0 bg-neutral-950">
                 <div className="relative w-full h-full">
@@ -147,18 +147,18 @@ export const Features = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="mb-24 text-center">
-                    <h2 className="text-5xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.05] mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-semibold tracking-tighter text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6">
                         Collaboration, <span className="text-slate-500">Reimagined.</span>
                     </h2>
-                    <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
                         Features built for speed, privacy, and productivity.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-[minmax(280px,auto)] sm:auto-rows-[minmax(300px,auto)]">
 
                     {/* Card 1: Identity (Large) */}
-                    <Card className="md:col-span-2 bg-gradient-to-br from-white/5 to-transparent">
+                    <Card className="sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-white/5 to-transparent">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-13 mb-6 flex items-center justify-center">
                                 <img src="/anonymous.svg?v=2" alt="Anonymous Profiles" className="w-full h-full object-contain" />
@@ -186,7 +186,7 @@ export const Features = () => {
                     </Card>
 
                     {/* Card 2: Messaging */}
-                    <Card className="md:col-span-1">
+                    <Card className="sm:col-span-1 lg:col-span-1">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-12 mb-6 flex items-center justify-center">
                                 <img src="/message.svg?v=2" alt="Instant Messaging" className="w-full h-full object-contain" />
@@ -200,7 +200,7 @@ export const Features = () => {
                     </Card>
 
                     {/* Card 3: Mobile App */}
-                    <Card className="md:col-span-1">
+                    <Card className="sm:col-span-1 lg:col-span-1">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-16 mb-6 flex items-center justify-center">
                                 <img src="/mobile.svg?v=2" alt="Protected Mobile App" className="w-full h-full object-contain" />
@@ -213,7 +213,7 @@ export const Features = () => {
                     </Card>
 
                     {/* Card 4: Encryption */}
-                    <Card className="md:col-span-1">
+                    <Card className="sm:col-span-1 lg:col-span-1">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-16 mb-6 flex items-center justify-center">
                                 <img src="/encrypt.svg?v=2" alt="End-to-End Encryption" className="w-full h-full object-contain" />
@@ -226,7 +226,7 @@ export const Features = () => {
                     </Card>
 
                     {/* Card 5: Sovereignty */}
-                    <Card className="md:col-span-1">
+                    <Card className="sm:col-span-1 lg:col-span-1">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-16 mb-6 flex items-center justify-center">
                                 <img src="/server.svg?v=2" alt="Data Sovereignty" className="w-full h-full object-contain" />

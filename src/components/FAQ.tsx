@@ -134,14 +134,14 @@ export const FAQ = () => {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     return (
-        <section className="py-32 px-6 bg-blitz-bg relative overflow-hidden">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
             <div className="max-w-4xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-12 sm:mb-16 lg:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -151,10 +151,10 @@ export const FAQ = () => {
                         <Icon icon="solar:question-circle-linear" className="text-base" />
                         FAQ
                     </motion.div>
-                    <h2 className="text-5xl lg:text-6xl font-semibold tracking-tighter text-white leading-tight mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tighter text-white leading-tight mb-4 sm:mb-6">
                         Frequently Asked <span className="text-slate-500">Questions</span>
                     </h2>
-                    <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
                         Find answers to common questions about security, features, and settings.
                     </p>
                 </div>
@@ -178,7 +178,7 @@ export const FAQ = () => {
                             </div>
 
                             {/* Accordion Items */}
-                            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 backdrop-blur-sm">
+                            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                                 {section.items.map((item, itemIndex) => (
                                     <FAQAccordionItem
                                         key={itemIndex}
@@ -197,7 +197,7 @@ export const FAQ = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-20 text-center p-10 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border border-blue-500/20 rounded-3xl"
+                    className="mt-12 sm:mt-16 lg:mt-20 text-center p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border border-blue-500/20 rounded-2xl sm:rounded-3xl"
                 >
                     <h3 className="text-2xl font-semibold text-white mb-3">
                         Still have questions?

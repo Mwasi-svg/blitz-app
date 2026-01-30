@@ -52,7 +52,7 @@ export const Hero = () => {
     }, [activeSlide]);
 
     return (
-        <section id="home" className="relative min-h-[850px] lg:h-screen pt-24 pb-12 flex flex-col justify-center overflow-hidden bg-blitz-bg">
+        <section id="home" className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] lg:h-screen pt-20 sm:pt-24 pb-8 sm:pb-12 flex flex-col justify-center overflow-hidden bg-blitz-bg">
             {/* Premium Background Layer */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Primary Linear Gradient (Base) */}
@@ -78,13 +78,13 @@ export const Hero = () => {
 
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.2] pointer-events-none mix-blend-overlay"></div>
 
-            <div className="max-w-7xl mx-auto w-full px-6 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-8 items-center relative z-10">
 
-                {/* Text Content */}
-                <div className="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1 relative z-20">
+                {/* Text Content - Full width on mobile, 6 cols on desktop */}
+                <div className="lg:col-span-6 flex flex-col justify-center order-1 lg:order-1 relative z-20">
 
                     {/* Carousel Text Area - Fixed minimum height to prevent shifts */}
-                    <div className="relative min-h-[400px] w-full flex flex-col justify-center">
+                    <div className="relative min-h-[280px] sm:min-h-[320px] lg:min-h-[400px] w-full flex flex-col justify-center">
                         <AnimatePresence mode="wait" initial={false}>
                             <motion.div
                                 key={activeSlide}
@@ -97,43 +97,43 @@ export const Hero = () => {
                                 }}
                                 className="w-full"
                             >
-                                <div className="flex items-center gap-3 mb-8">
+                                <div className="flex items-center gap-3 mb-4 sm:mb-6 lg:mb-8">
                                     <span className="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-blue-500/10 border border-blue-500/20 text-blue-400">
                                         {slides[activeSlide].tag}
                                     </span>
                                 </div>
 
-                                <h1 className="text-5xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.05] mb-6">
+                                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6">
                                     {slides[activeSlide].title.split('\n').map((line, i) => (
                                         <span key={i} className="block">{line}</span>
                                     ))}
                                 </h1>
 
-                                <p className="text-lg text-slate-400 leading-relaxed max-w-lg">
+                                <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-lg">
                                     {slides[activeSlide].description}
                                 </p>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Static Actions (Outside Carousel) */}
-                    <div className="flex items-center gap-4 mb-16 mt-4">
-                        <a href="#platforms" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] inline-block">
+                    {/* Static Actions (Outside Carousel) - Stack on mobile */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 mt-4">
+                        <a href="#platforms" className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold tracking-wide transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] text-center">
                             Get Started Free
                         </a>
-                        <a href="#features" className="group px-8 py-4 rounded-full text-sm font-semibold text-slate-300 border border-white/10 hover:bg-white/5 transition-all flex items-center gap-2 inline-block">
+                        <a href="#features" className="group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-slate-300 border border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-2">
                             Features
                             <Icon icon="solar:arrow-right-linear" className="transition-transform duration-300 group-hover:translate-x-1 text-lg" />
                         </a>
                     </div>
 
-                    {/* Progress Indicators */}
-                    <div className="flex gap-4">
+                    {/* Progress Indicators - Larger touch targets on mobile */}
+                    <div className="flex gap-3 sm:gap-4">
                         {slides.map((_, index) => (
                             <div
                                 key={index}
                                 onClick={() => setActiveSlide(index)}
-                                className="h-1 flex-1 bg-white/10 rounded-full overflow-hidden cursor-pointer group relative"
+                                className="h-2 sm:h-1.5 lg:h-1 flex-1 bg-white/10 rounded-full overflow-hidden cursor-pointer group relative"
                             >
                                 <div className={`absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors`}></div>
                                 {index === activeSlide && (
@@ -150,8 +150,8 @@ export const Hero = () => {
                     </div>
                 </div>
 
-                {/* Interactive Visual Canvas */}
-                <div className="lg:col-span-6 h-[400px] lg:h-[600px] relative order-1 lg:order-2 perspective-1000">
+                {/* Interactive Visual Canvas - Hidden on mobile/tablet */}
+                <div className="hidden lg:block lg:col-span-6 h-[600px] relative order-2 perspective-1000">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeSlide}
