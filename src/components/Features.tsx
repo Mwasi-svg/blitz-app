@@ -4,7 +4,7 @@ import { Card } from './Card';
 export const Features = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    // Beams Canvas Animation
+    // drawing those glowing light beams in the background with canvas
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -132,7 +132,7 @@ export const Features = () => {
 
     return (
         <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative z-0 overflow-hidden">
-            {/* Beams Background */}
+            {/* those animated light beams */}
             <div className="absolute inset-0 bg-neutral-950">
                 <div className="relative w-full h-full">
                     <canvas ref={canvasRef} className="absolute inset-0 w-full h-full"></canvas>
@@ -157,7 +157,7 @@ export const Features = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-[minmax(280px,auto)] sm:auto-rows-[minmax(300px,auto)]">
 
-                    {/* Card 1: Identity (Large) */}
+                    {/* big feature card (anonymous profiles) */}
                     <Card className="sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-white/5 to-transparent">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-13 mb-6 flex items-center justify-center">
@@ -185,7 +185,7 @@ export const Features = () => {
                         </div>
                     </Card>
 
-                    {/* Card 2: Messaging */}
+                    {/* smaller feature grids */}
                     <Card className="sm:col-span-1 lg:col-span-1">
                         <div className="flex flex-col h-full">
                             <div className="w-16 h-12 mb-6 flex items-center justify-center">

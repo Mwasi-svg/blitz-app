@@ -1,5 +1,5 @@
-# Milima Messaging Platform
-Landing website page for Blitz Messaging application
+# Blitz Messaging App Landing Page
+Landing website page for Blitz Messaging application for Milima Technologies.
 
 # Overview
 This landing page is focused on:
@@ -70,3 +70,30 @@ Test browser compatibility
 4. Deployment
 Host on preferred platform (client-sided)
 Email functionality is live.
+
+# Project Structure
+
+Quick breakdown of how the project is structured, how routing works, and how we showcase everything on the frontend.
+
+### The Entry Point
+Everything starts at `src/main.tsx`. Wrap the app in a `QueryClientProvider` (for any future API work) and kick off the `RouterProvider`.
+
+### Routing (`src/router.tsx`)
+Using React Router's `createBrowserRouter`. 
+- The base path (`/`) is wrapped in `MainLayout`.
+- Use **lazy loading** for the `HomePage`. Helps to keeps the initial bundle size small—the browser only grabs the home page code when it actually needs it.
+
+### The Frame (`src/components/MainLayout.tsx`)
+Ensures `Header` and `Footer` are always visible. The `<Outlet />` is a placeholder where whatever page you're visiting gets injected.
+
+### Component System
+The `HomePage.tsx` is just a coordinator that pulls in individual sections from the `src/components/` folder:
+
+- **Interactive stuff**: Most animations are inside `HeroAnimations.tsx`. 
+- **The Grids**: `Features.tsx` handles main value props and 
+- **The Modal**: `Contact.tsx` handles lead gen form via EmailJS intergration.
+
+### Tech Stack / Styling
+- **Tailwind CSS**: For all the styling. Global tokens (like colors and blur effects) live in `src/index.css`.
+- **Framer Motion**: For animations (fades, slides, and the springy feel of the modals).
+- **Iconify**: For icons without bloating the project with SVG files.

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icon';
 
-// Premium 2-Way Messaging Animation Component
+// nice little chat animation to show the 2-way messaging flow
 export const InstantMessagingAnimation = () => {
     const [messages, setMessages] = useState<any[]>([]);
     const [showTyping, setShowTyping] = useState<string | boolean>(false);
@@ -57,7 +57,7 @@ export const InstantMessagingAnimation = () => {
         return () => timers.forEach(clearTimeout);
     }, []);
 
-    // Status indicator component
+    // shows sent/delivered/read ticks
     const StatusIndicator = ({ status }: { status: string }) => {
         if (!status || status === 'sent') {
             return (
@@ -118,7 +118,7 @@ export const InstantMessagingAnimation = () => {
         return null;
     };
 
-    // Typing indicator
+    // simple '...' bubble when someone is typing
     const TypingIndicator = () => (
         <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -148,7 +148,7 @@ export const InstantMessagingAnimation = () => {
 
     return (
         <div className="h-full flex items-center justify-center relative px-6">
-            {/* Chat container */}
+            {/* the actual message bubbles */}
             <div className="w-full max-w-[340px] space-y-3">
                 <AnimatePresence mode="popLayout">
                     {messages.map((msg) => (
@@ -213,7 +213,7 @@ export const InstantMessagingAnimation = () => {
                 </AnimatePresence>
             </div>
 
-            {/* Subtle ambient glow */}
+            {/* just a bit of extra glow behind everything */}
             <motion.div
                 animate={{
                     opacity: [0.03, 0.08, 0.03],
@@ -226,7 +226,7 @@ export const InstantMessagingAnimation = () => {
     );
 };
 
-// Encryption Animation Component
+// shows the text scrambler/encryption effect visually
 export const EncryptionAnimation = () => {
     const [phase, setPhase] = useState(0); // 0: plaintext, 1: encrypting, 2: encrypted
 
@@ -343,7 +343,7 @@ export const EncryptionAnimation = () => {
     );
 };
 
-// Identity Protection Animation Component
+// morphing avatar to show identity protection/masking
 export const IdentityProtectionAnimation = () => {
     const [activeHandle, setActiveHandle] = useState(0);
     const handles = ['user_x92a', 'delta_v4', 'echo_7z', 'ghost_k8'];
@@ -429,7 +429,7 @@ export const IdentityProtectionAnimation = () => {
         </div>
     );
 };
-// Mobile App Protection Animation Component
+// simple mobile frame visual
 export const MobileAppAnimation = () => {
     return (
         <div className="h-full w-full flex items-center justify-center relative p-8">

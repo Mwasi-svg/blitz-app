@@ -3,12 +3,12 @@ import { Icon } from './Icon';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-interface ContactModalProps {
+interface ContactProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+export const Contact = ({ isOpen, onClose }: ContactProps) => {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [formData, setFormData] = useState({
         name: '',
@@ -35,7 +35,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         const publicKey = '_-8JNO8FxnE7ekwmB';
 
         try {
-            // 1st template: Support team receives the inquiry
+            // first one: send the lead to support team
             await emailjs.send(
                 serviceId,
                 'template_mgimyiq',
@@ -48,7 +48,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 publicKey
             );
 
-            // 2nd template: User receives an auto-reply
+            // second one: send the auto-reply to the user
             await emailjs.send(
                 serviceId,
                 'template_wild9dd',
@@ -75,7 +75,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         <AnimatePresence>
             {isOpen && (
                 <>
-                    {/* Backdrop */}
+                    {/* dim everything else */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -84,7 +84,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                         className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100]"
                     />
 
-                    {/* Modal */}
+                    {/* the actual popup contents */}
                     <div className="fixed inset-0 flex items-center justify-center z-[101] p-4 pointer-events-none">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -93,7 +93,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
                             className="relative overflow-hidden overflow-y-auto max-h-[90vh] bg-[#0B0F14] w-full max-w-5xl rounded-2xl sm:rounded-3xl shadow-2xl pointer-events-auto border border-white/10"
                         >
-                            {/* Background */}
+                            {/* slight image/noise backdrop */}
                             <div className="absolute inset-0">
                                 <img
                                     src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/60668e31-2150-424e-b292-05bfdda254e0_1600w.jpg"
@@ -103,7 +103,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0B0F14] via-[#0B0F14]/80 to-transparent"></div>
                             </div>
 
-                            {/* Close Button */}
+                            {/* close button at the top right */}
                             <button
                                 onClick={onClose}
                                 className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all backdrop-blur-md border border-white/5"
@@ -111,7 +111,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                                 <Icon icon="solar:close-circle-linear" className="text-2xl" />
                             </button>
 
-                            {/* Content */}
+                            {/* grid for form and summary info */}
                             <div className="relative z-10 p-4 sm:p-6 md:p-8 lg:p-12">
                                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
                                     {/* Form card */}

@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { MarketingLayout } from './components/MarketingLayout';
+import { MainLayout } from './components/MainLayout';
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <MarketingLayout />,
+        element: <MainLayout />,
         children: [
             {
                 index: true,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icon';
-import { ContactModal } from './ContactModal';
+import { Contact } from './Contact';
 
 interface FAQItem {
     question: string;
@@ -131,16 +131,16 @@ export const FAQ = () => {
         setOpenItems(prev => ({ ...prev, [key]: !prev[key] }));
     };
 
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
 
     return (
         <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative overflow-hidden">
-            {/* Background Effects */}
+            {/* some ambient light effects for depth */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
             <div className="max-w-4xl mx-auto relative z-10">
-                {/* Header */}
+                {/* section title and subtitle */}
                 <div className="text-center mb-12 sm:mb-16 lg:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -159,7 +159,7 @@ export const FAQ = () => {
                     </p>
                 </div>
 
-                {/* FAQ Sections */}
+                {/* actual faq categories */}
                 <div className="space-y-12">
                     {faqData.map((section, sectionIndex) => (
                         <motion.div
@@ -169,7 +169,7 @@ export const FAQ = () => {
                             viewport={{ once: true }}
                             transition={{ delay: sectionIndex * 0.1 }}
                         >
-                            {/* Section Header */}
+                            {/* category header (Security, Functions, etc) */}
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></div>
                                 <h3 className="text-2xl font-semibold text-white tracking-tight">
@@ -177,7 +177,7 @@ export const FAQ = () => {
                                 </h3>
                             </div>
 
-                            {/* Accordion Items */}
+                            {/* the individual questions */}
                             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
                                 {section.items.map((item, itemIndex) => (
                                     <FAQAccordionItem
@@ -192,7 +192,7 @@ export const FAQ = () => {
                     ))}
                 </div>
 
-                {/* Still have questions CTA */}
+                {/* final cta if they're still confused */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export const FAQ = () => {
                         Our team is here to help. Reach out anytime.
                     </p>
                     <button
-                        onClick={() => setIsContactModalOpen(true)}
+                        onClick={() => setIsContactOpen(true)}
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
                     >
                         Email Us
@@ -215,9 +215,9 @@ export const FAQ = () => {
                 </motion.div>
             </div>
 
-            <ContactModal
-                isOpen={isContactModalOpen}
-                onClose={() => setIsContactModalOpen(false)}
+            <Contact
+                isOpen={isContactOpen}
+                onClose={() => setIsContactOpen(false)}
             />
         </section>
     );

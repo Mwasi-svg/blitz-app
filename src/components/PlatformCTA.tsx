@@ -12,7 +12,7 @@ export const PlatformCTA = () => {
                     className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px]"
                 >
                     <div className="relative bg-[#0E1623] rounded-2xl sm:rounded-[3rem] overflow-hidden px-4 sm:px-8 py-12 sm:py-16 md:px-20 md:py-24 text-center">
-                        {/* Background Effects */}
+                        {/* ambient glows and noise texture */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
 

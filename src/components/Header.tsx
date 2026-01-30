@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils';
-import { GradientBeamButton } from './GradientBeamButton';
 import { Icon } from './Icon';
 
 export const Header = () => {
@@ -14,7 +13,7 @@ export const Header = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    // Close mobile menu on resize to desktop
+    // kill mobile menu if user resizes back up to desktop width
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) setMobileMenuOpen(false);
@@ -23,7 +22,7 @@ export const Header = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Prevent body scroll when mobile menu is open
+    // don't let the background scroll if the menu is open
     useEffect(() => {
         if (mobileMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -50,14 +49,14 @@ export const Header = () => {
                 )}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-                    {/* Logo */}
+                    {/* brand logo */}
                     <div className="flex items-center gap-3">
                         <div className="h-7 sm:h-8 w-auto flex items-center justify-center">
                             <img src="/logo.png" alt="Blitz Logo" className="h-full w-auto object-contain" />
                         </div>
                     </div>
 
-                    {/* Desktop Navigation */}
+                    {/* links for desktop */}
                     <div className="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
                         {navLinks.map(link => (
                             <a key={link.href} href={link.href} className="hover:text-blue-400 transition-colors">
@@ -68,13 +67,6 @@ export const Header = () => {
 
                     {/* Desktop CTA + Mobile Hamburger */}
                     <div className="flex items-center gap-3">
-                        {/* CTA - hidden on very small screens, shortened text on mobile */}
-                        <div className="hidden sm:block">
-                            <GradientBeamButton href="#platforms">
-                                <span className="hidden md:inline">Get Started Free</span>
-                                <span className="md:hidden">Get Started</span>
-                            </GradientBeamButton>
-                        </div>
 
                         {/* Hamburger Button - visible on mobile only */}
                         <button

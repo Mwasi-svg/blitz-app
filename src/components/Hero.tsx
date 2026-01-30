@@ -32,7 +32,7 @@ export const Hero = () => {
         }
     ];
 
-    // Handle visibility change to prevent animation glitches when tab is inactive
+    // fix: keep animations smooth even if the user switches tabs
     useEffect(() => {
         const handleVisibilityChange = () => {
             if (document.visibilityState === 'visible') {
@@ -53,25 +53,25 @@ export const Hero = () => {
 
     return (
         <section id="home" className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] lg:h-screen pt-20 sm:pt-24 pb-8 sm:pb-12 flex flex-col justify-center overflow-hidden bg-blitz-bg">
-            {/* Premium Background Layer */}
+            {/* main background aesthetics */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Primary Linear Gradient (Base) */}
+                {/* base gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0B0F14] via-[#0E1623] to-[#0B0F14] opacity-100"></div>
 
-                {/* Hero Image Background - Now after the base gradient */}
+                {/* hero texture/image overlay */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.43] mix-blend-screen scale-105"
                     style={{ backgroundImage: 'url("/hero.png")' }}
                 ></div>
 
-                {/* Subtle mask to fade the image at the edges */}
+                {/* soft edge fading */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-[#0B0F14] opacity-60"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14] via-transparent to-[#0B0F14] opacity-60"></div>
 
-                {/* Secondary Linear Accents */}
+                {/* extra lighting details */}
                 <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(59,130,246,0.05)_40%,transparent_60%)]"></div>
 
-                {/* Ambient Glows */}
+                {/* glowy blobs for depth */}
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[130px] rounded-full animate-pulse-slow"></div>
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/5 blur-[120px] rounded-full"></div>
             </div>
@@ -80,10 +80,10 @@ export const Hero = () => {
 
             <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-8 items-center relative z-10">
 
-                {/* Text Content - Full width on mobile, 6 cols on desktop */}
+                {/* main copy and ctas */}
                 <div className="lg:col-span-6 flex flex-col justify-center order-1 lg:order-1 relative z-20">
 
-                    {/* Carousel Text Area - Fixed minimum height to prevent shifts */}
+                    {/* the sliding text area */}
                     <div className="relative min-h-[280px] sm:min-h-[320px] lg:min-h-[400px] w-full flex flex-col justify-center">
                         <AnimatePresence mode="wait" initial={false}>
                             <motion.div
@@ -116,7 +116,7 @@ export const Hero = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Static Actions (Outside Carousel) - Stack on mobile */}
+                    {/* main buttons (platforms/features) */}
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12 lg:mb-16 mt-4">
                         <a href="#platforms" className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold tracking-wide transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] text-center">
                             Get Started Free
@@ -127,7 +127,7 @@ export const Hero = () => {
                         </a>
                     </div>
 
-                    {/* Progress Indicators - Larger touch targets on mobile */}
+                    {/* carousel dots/lines */}
                     <div className="flex gap-3 sm:gap-4">
                         {slides.map((_, index) => (
                             <div
@@ -150,7 +150,7 @@ export const Hero = () => {
                     </div>
                 </div>
 
-                {/* Interactive Visual Canvas - Hidden on mobile/tablet */}
+                {/* right side visuals (only for desktop) */}
                 <div className="hidden lg:block lg:col-span-6 h-[600px] relative order-2 perspective-1000">
                     <AnimatePresence mode="wait">
                         <motion.div

@@ -4,7 +4,7 @@ import { Icon } from './Icon';
 export const Footer = () => {
     return (
         <footer id="contact" className="bg-black relative pt-16 sm:pt-24 lg:pt-32 pb-8 sm:pb-12 overflow-hidden">
-            {/* Top Content */}
+            {/* main links and info */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-8 sm:gap-12 mb-16 sm:mb-24 lg:mb-32">
                     <div>
@@ -44,7 +44,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            {/* Massive BLITZ Typography with Fade Effect */}
+            {/* big decorative 'BLITZ' title at the bottom */}
             <div className="relative w-full overflow-hidden flex justify-center items-end" style={{ height: '20vh' }}>
                 <h1 className="text-[20vw] sm:text-[18vw] md:text-[20vw] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#1C2330] to-transparent select-none absolute bottom-[-5vw] left-0 right-0 text-center pointer-events-none">
                     BLITZ
