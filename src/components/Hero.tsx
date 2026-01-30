@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icon';
-import { InstantMessagingAnimation, MobileAppAnimation } from './HeroAnimations';
+import { MobileAppAnimation } from './HeroAnimations';
 
 export const Hero = () => {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -163,33 +163,22 @@ export const Hero = () => {
                         >
                             {slides[activeSlide].visual === 'mobile' ? (
                                 <MobileAppAnimation key={activeSlide} />
-                            ) : slides[activeSlide].visual === 'security' ? (
-                                <div className="relative w-full h-full flex items-center justify-center p-4">
-                                    <img
-                                        src="/images/privacy.png"
-                                        alt="Privacy Protection"
-                                        className="w-full max-w-4xl aspect-square object-contain scale-125 lg:scale-150 transition-transform duration-700"
-                                    />
-                                </div>
                             ) : (
-                                <div className="relative w-full max-w-md aspect-[3/4] lg:aspect-square bg-[#0E1623] rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex flex-col ring-1 ring-white/5">
-                                    {/* Mockup Header */}
-                                    <div className="h-12 border-b border-white/5 flex items-center px-4 gap-3 bg-white/[0.02]">
-                                        <div className="flex gap-1.5">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/20"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/20"></div>
-                                        </div>
-                                        <div className="ml-auto w-24 h-1.5 rounded-full bg-white/5"></div>
-                                    </div>
-
-                                    {/* Dynamic Slide Content */}
-                                    <div className="flex-1 p-6 relative overflow-hidden">
-                                        {/* Slide 1: Instant Messaging Animation */}
-                                        {slides[activeSlide].visual === 'speed' && (
-                                            <InstantMessagingAnimation key={activeSlide} />
-                                        )}
-                                    </div>
+                                <div className="relative w-full h-full flex items-center justify-center p-4">
+                                    <motion.img
+                                        key={slides[activeSlide].visual}
+                                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: slides[activeSlide].visual === 'security' ? 1.4 : 1.1,
+                                            y: 0
+                                        }}
+                                        src={slides[activeSlide].visual === 'security' ? "/images/privacy.png" : "/images/chat.png"}
+                                        alt={slides[activeSlide].title}
+                                        className={`w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] ${slides[activeSlide].visual === 'security' ? 'max-h-[600px]' : 'max-h-[500px]'
+                                            }`}
+                                        transition={{ duration: 0.8, ease: "easeOut" }}
+                                    />
                                 </div>
                             )}
 

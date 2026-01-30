@@ -73,30 +73,36 @@ export const PlatformCTA = () => {
                             Download on your preferred platform and stay connected anywhere.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-                            <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623] hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                <Icon icon="ri:apple-fill" className="text-2xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                <span className="text-sm font-medium text-white">macOS</span>
-                                <span className="text-[10px] text-slate-500">Universal Binary</span>
-                            </a>
+                        <motion.div variants={itemVariants} className="flex flex-col gap-4 max-w-md mx-auto lg:mx-0">
+                            {/* Priority Mobile Group (emphasized on mobile) */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                    <Icon icon="simple-icons:googleplay" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
+                                    <span className="text-base font-semibold text-white">Android</span>
+                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">Play Store</span>
+                                </a>
 
-                            <a href="https://apps.microsoft.com/search?query=blitz+chat&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623] hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                <Icon icon="ri:windows-fill" className="text-2xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                <span className="text-sm font-medium text-white">Windows</span>
-                                <span className="text-[10px] text-slate-500">10 & 11</span>
-                            </a>
+                                <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                    <Icon icon="simple-icons:appstore" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
+                                    <span className="text-base font-semibold text-white">iOS</span>
+                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">App Store</span>
+                                </a>
+                            </div>
 
-                            <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623] hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                <Icon icon="simple-icons:android" className="text-2xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                <span className="text-sm font-medium text-white">Android</span>
-                                <span className="text-[10px] text-slate-500">Play Store</span>
-                            </a>
+                            {/* Secondary Desktop Group */}
+                            <div className="grid grid-cols-2 gap-4">
+                                <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-0.5 opacity-80 hover:opacity-100">
+                                    <Icon icon="simple-icons:appstore" className="text-2xl text-slate-300 mb-2 group-hover:scale-110 transition-transform" />
+                                    <span className="text-sm font-medium text-slate-200">macOS</span>
+                                    <span className="text-[10px] text-slate-500 text-center">Universal Binary</span>
+                                </a>
 
-                            <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623] hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                <Icon icon="ri:apple-fill" className="text-2xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                <span className="text-sm font-medium text-white">iOS</span>
-                                <span className="text-[10px] text-slate-500">App Store</span>
-                            </a>
+                                <a href="https://apps.microsoft.com/search?query=blitz+chat&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-0.5 opacity-80 hover:opacity-100">
+                                    <Icon icon="simple-icons:microsoftstore" className="text-2xl text-slate-300 mb-2 group-hover:scale-110 transition-transform" />
+                                    <span className="text-sm font-medium text-slate-200">Windows</span>
+                                    <span className="text-[10px] text-slate-500 text-center">10 & 11</span>
+                                </a>
+                            </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="mt-8 flex flex-col lg:flex-row items-center lg:items-start gap-3">
