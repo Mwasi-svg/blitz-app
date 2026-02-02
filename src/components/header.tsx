@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils';
-import { Icon } from './icon';
+import { Icon } from './Icon';
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -45,15 +45,17 @@ export const Header = () => {
                 initial={{ y: -100 }} animate={{ y: 0 }}
                 className={cn(
                     "fixed top-0 w-full z-50 transition-all duration-300",
-                    scrolled ? 'glass py-3' : 'py-4 md:py-6 bg-transparent'
+                    scrolled ? 'glass py-1' : 'py-2 bg-transparent'
                 )}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-                    {/* brand logo */}
-                    <div className="flex items-center gap-3">
-                        <div className="h-7 sm:h-8 w-auto flex items-center justify-center">
+                    <div className="flex items-end gap-3 group cursor-pointer">
+                        <div className="h-11 sm:h-16 w-auto flex items-center justify-center">
                             <img src="/images/logo.png" alt="Blitz Logo" className="h-full w-auto object-contain" />
                         </div>
+                        <span className="text-base sm:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80 tracking-tight hidden sm:block mb-1.5">
+                            Milima Messenger
+                        </span>
                     </div>
 
                     {/* links for desktop */}

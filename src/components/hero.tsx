@@ -1,32 +1,35 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Icon } from './icon';
+import { Icon } from './Icon';
 import { MobileAppAnimation } from './hero_animations';
 
 export const Hero = () => {
     const [activeSlide, setActiveSlide] = useState(0);
     const slides = [
         {
-            id: 3,
+
+            id: 1,
+            tag: "Milima Messenger",
+            title: "Messaging at ease on your device.",
+            description: "Stay connected with seamless messaging in your workspace environment.",
+            visual: "security",
+            color: "bg-indigo-500"
+
+        },
+
+        {
+            id: 2,
             tag: "On-hands protection",
             title: "Mobile App \nProtection.",
-            description: "Protect your data with passcodes, biometrics, and more.",
+            description: "Protect your data and messages on the mobile app with passcodes, biometrics, and more.",
             visual: "mobile",
             color: "bg-cyan-500"
         },
         {
-            id: 2,
-            tag: "Built on trust. Backed by encryption.",
-            title: "Privacy is not\noptional.",
-            description: "Real time end-to-end encryption. Your data stays yours.",
-            visual: "security",
-            color: "bg-indigo-500"
-        },
-        {
-            id: 1,
-            tag: "Real-time Messaging",
-            title: "Messaging at Blitz \nspeed.",
-            description: "Low latency communication for teams that move fast.",
+            id: 3,
+            tag: "Privacy First",
+            title: "Fast, Simple, \nPrivate.",
+            description: "Own your conversations with secure end-to-end encryption.",
             visual: "speed",
             color: "bg-blue-500"
         }
@@ -176,13 +179,12 @@ export const Hero = () => {
                                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                                         animate={{
                                             opacity: 1,
-                                            scale: slides[activeSlide].visual === 'security' ? 1.4 : 1.55,
+                                            scale: 1.1,
                                             y: 0
                                         }}
-                                        src={slides[activeSlide].visual === 'security' ? "/images/privacy.png" : "/images/chat.png"}
+                                        src={slides[activeSlide].visual === 'security' ? "/images/chat_2.png" : slides[activeSlide].visual === 'speed' ? "/images/contacts.png" : "/images/chat.png"}
                                         alt={slides[activeSlide].title}
-                                        className={`w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] ${slides[activeSlide].visual === 'security' ? 'max-h-[600px]' : 'max-h-[650px]'
-                                            }`}
+                                        className={`w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-h-[650px] rounded-3xl border border-white/10 ${slides[activeSlide].visual === 'security' || slides[activeSlide].visual === 'speed' ? 'max-w-[260px] mx-auto' : ''}`}
                                         transition={{ duration: 0.8, ease: "easeOut" }}
                                     />
                                 </div>
