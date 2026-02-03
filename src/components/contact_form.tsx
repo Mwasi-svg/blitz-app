@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 

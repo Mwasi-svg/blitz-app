@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 
 export const PlatformCTA = () => {
     const containerVariants: Variants = {

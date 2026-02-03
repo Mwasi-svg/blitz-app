@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false);
