@@ -75,7 +75,7 @@ export const Header = () => {
                             className="hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-blue-500/25 border border-white/10"
                         >
                             <span>Download</span>
-                            <Icon icon="solar:arrow-right-linear" className="text-xs opacity-80" />
+                            <Icon icon="solar:alt-arrow-right-linear" className="text-xs opacity-80" />
                         </a>
 
                         {/* Hamburger Button - visible on mobile only */}
@@ -138,8 +138,8 @@ export const Header = () => {
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-xl text-base font-semibold transition-all"
                                 >
-                                    Get Started Free
-                                    <Icon icon="solar:arrow-right-linear" />
+                                    Download
+                                    <Icon icon="solar:alt-arrow-right-linear" />
                                 </a>
                             </div>
                         </motion.div>

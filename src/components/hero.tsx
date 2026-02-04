@@ -50,7 +50,7 @@ export const Hero = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveSlide((prev) => (prev + 1) % slides.length);
-        }, 10000);
+        }, 3500);
         return () => clearInterval(timer);
     }, [activeSlide]);
 
@@ -130,9 +130,9 @@ export const Hero = () => {
                         <a href="#platforms" className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold tracking-wide transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] text-center">
                             Get Started Free
                         </a>
-                        <a href="#features" className="group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-slate-300 border border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-2">
+                        <a href="#features" className="group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-blue-400 border-2 border-blue-500/40 hover:bg-blue-500/5 transition-all flex items-center justify-center gap-2">
                             Features
-                            <Icon icon="solar:arrow-right-linear" className="transition-transform duration-300 group-hover:translate-x-1 text-lg" />
+                            <Icon icon="solar:alt-arrow-right-linear" className="transition-transform duration-300 group-hover:translate-x-1 text-lg" />
                         </a>
                     </div>
 
@@ -150,7 +150,7 @@ export const Hero = () => {
                                         layoutId="activeProgress"
                                         initial={{ width: "0%" }}
                                         animate={{ width: "100%" }}
-                                        transition={{ duration: 10, ease: "linear" }}
+                                        transition={{ duration: 3.5, ease: "linear" }}
                                         className="h-full bg-blue-500 rounded-full"
                                     />
                                 )}

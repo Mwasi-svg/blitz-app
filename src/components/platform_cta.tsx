@@ -73,67 +73,60 @@ export const PlatformCTA = () => {
                             Download on your preferred platform and stay connected anywhere.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-col gap-4 max-w-md mx-auto lg:mx-0">
-                            {/* Priority Mobile Group (emphasized on mobile) */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
-                                    <Icon icon="simple-icons:googleplay" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-semibold text-white">Google Play Store</span>
-                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">Android</span>
+                        <motion.div variants={itemVariants} className="w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                                {/* Google Play */}
+                                <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                    <Icon icon="simple-icons:googleplay" className="text-4xl text-white mb-3 group-hover:scale-110 transition-transform" />
+                                    <span className="text-lg font-semibold text-white">Google Play Store</span>
+                                    <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors">Android</span>
                                 </a>
 
-                                <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
-                                    <Icon icon="simple-icons:appstore" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-semibold text-white">App Store</span>
-                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">iOS</span>
-                                </a>
-                            </div>
-
-                            {/* Secondary Desktop Group */}
-                            <div className="grid grid-cols-2 gap-4">
-                                <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-0.5 opacity-80 hover:opacity-100">
-                                    <Icon icon="simple-icons:appstore" className="text-2xl text-slate-300 mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-sm font-medium text-slate-200">macOS</span>
-                                    <span className="text-[10px] text-slate-500 text-center">Universal Binary</span>
+                                {/* App Store */}
+                                <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                    <Icon icon="simple-icons:appstore" className="text-4xl text-white mb-3 group-hover:scale-110 transition-transform" />
+                                    <span className="text-lg font-semibold text-white">App Store</span>
+                                    <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors">iOS</span>
                                 </a>
 
-                                <a href="https://apps.microsoft.com/search?query=blitz+chat&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-4 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-0.5 opacity-80 hover:opacity-100">
-                                    <Icon icon="simple-icons:microsoftstore" className="text-2xl text-slate-300 mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-sm font-medium text-slate-200">Windows</span>
-                                    <span className="text-[10px] text-slate-500 text-center">10 & 11</span>
+                                {/* macOS */}
+                                <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
+                                    <Icon icon="simple-icons:appstore" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
+                                    <span className="text-base font-medium text-slate-200 group-hover:text-white">macOS</span>
+                                    <span className="text-xs text-slate-500 group-hover:text-slate-400">Universal Binary</span>
+                                </a>
+
+                                {/* Windows */}
+                                <a href="https://apps.microsoft.com/search?query=blitz+chat&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
+                                    <Icon icon="simple-icons:microsoftstore" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
+                                    <span className="text-base font-medium text-slate-200 group-hover:text-white">Windows</span>
+                                    <span className="text-xs text-slate-500 group-hover:text-slate-400">10 & 11</span>
                                 </a>
                             </div>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="mt-12 flex flex-col items-center lg:items-start gap-6">
-                            <div className="flex flex-col sm:flex-row items-center gap-6">
-                                {/* Refined Premium Corporate Button */}
-                                <a href="mailto:corporate@blitz-chat.com" className="group flex items-center gap-5 p-5 pr-12 rounded-2xl bg-gradient-to-br from-[#0E1623] to-[#141d2e] border border-blue-500/20 hover:border-blue-500/40 shadow-[0_0_30px_rgba(59,130,246,0.05)] hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all hover:-translate-y-1 relative overflow-hidden">
-                                    {/* Subtle Glass Tint */}
+                        <motion.div variants={itemVariants} className="mt-12 w-full pt-10 border-t border-white/5">
+                            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                                {/* Corporate CTA Button */}
+                                <a href="mailto:corporate@blitz-chat.com" className="group relative w-full lg:w-auto flex items-center gap-6 p-6 pr-10 rounded-2xl bg-gradient-to-br from-[#0E1623] to-[#141d2e] border border-blue-500/20 hover:border-blue-500/40 shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
                                     <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                                    <div className="relative z-10 text-white transition-colors group-hover:scale-110 duration-300">
-                                        <Icon icon="solar:case-bold" className="text-5xl" />
+                                    <div className="relative z-10 flex items-center justify-center w-14 h-14 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                                        <Icon icon="solar:case-bold" className="text-3xl" />
                                     </div>
-
                                     <div className="flex flex-col relative z-10">
-                                        <span className="text-[11px] font-bold text-blue-400/80 tracking-widest uppercase mb-1.5">Available for business</span>
-                                        <span className="text-2xl font-bold text-white tracking-tight">Corporate version</span>
+                                        <span className="text-[10px] font-bold text-blue-400/80 tracking-[0.2em] uppercase mb-1">Business Solution</span>
+                                        <span className="text-xl font-bold text-white tracking-tight">Corporate version</span>
                                     </div>
                                 </a>
 
-                                <div className="hidden sm:block w-px h-16 bg-white/5 mx-2"></div>
-
-                                <div className="flex flex-col items-center lg:items-start space-y-2">
-                                    <div className="flex items-center gap-2">
-                                        <div className="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                                            <Icon icon="solar:shield-check-bold" className="text-blue-400 text-lg" />
-                                        </div>
-                                        <span className="text-sm font-bold text-white tracking-wide">100% Secure Solution</span>
+                                {/* Security Info */}
+                                <div className="flex flex-col items-center lg:items-start space-y-3 flex-1">
+                                    <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/5 border border-blue-500/10">
+                                        <Icon icon="solar:shield-check-bold" className="text-blue-400 text-base" />
+                                        <span className="text-[11px] font-bold text-blue-400 tracking-wider uppercase">100% Secure & Private</span>
                                     </div>
-                                    <p className="text-xs text-slate-500 max-w-[220px] leading-relaxed lg:text-left text-center">
-
-                                        Need a 200% secure corporate solution?. Deploy <span className="text-slate-400">Millima Messenger</span> on your own private corporate servers.
+                                    <p className="text-sm text-slate-400 max-w-sm leading-relaxed lg:text-left text-center">
+                                        Deploy <span className="text-white font-medium">Millima Messenger</span> on your own private corporate servers for absolute data sovereignty and control.
                                     </p>
                                 </div>
                             </div>

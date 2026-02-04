@@ -23,30 +23,30 @@ export const Footer = () => {
                     <div className="flex flex-col items-start text-left md:pl-12 md:border-l border-white/10 pt-2 lg:pl-16">
                         <div className="flex flex-col gap-2 text-sm font-medium text-slate-500">
                             <a href="mailto:hello@blitz-chat.com" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
-                                <Icon icon="solar:letter-linear" className="text-lg" />
+                                <Icon icon="solar:letter-linear" className="text-xl" />
                                 hello@blitz-chat.com
                             </a>
                             <a href="tel:+15550002548" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
-                                <Icon icon="solar:phone-calling-linear" className="text-lg" />
+                                <Icon icon="solar:phone-calling-linear" className="text-xl" />
                                 +1 (555) 000-BLITZ
                             </a>
                         </div>
                         <div className="flex flex-col gap-5 mt-10 w-fit">
-                            <a href="https://www.instagram.com/accounts/login/?hl=en" className="group flex items-center gap-4 text-slate-500 hover:text-white transition-colors">
+                            <a href="https://www.instagram.com/accounts/login/?hl=en" className="group flex items-center gap-4 text-slate-400 hover:text-white transition-colors">
                                 <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/20 group-hover:bg-white/5 transition-all">
-                                    <Icon icon="ri:instagram-line" className="text-xl" />
+                                    <Icon icon="simple-icons:instagram" className="text-lg text-white/80 group-hover:text-white transition-colors" />
                                 </div>
                                 <span className="text-xs font-semibold uppercase tracking-widest">Instagram</span>
                             </a>
-                            <a href="https://x.com/" className="group flex items-center gap-4 text-slate-500 hover:text-white transition-colors">
+                            <a href="https://x.com/" className="group flex items-center gap-4 text-slate-400 hover:text-white transition-colors">
                                 <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/20 group-hover:bg-white/5 transition-all">
-                                    <Icon icon="ri:twitter-x-fill" className="text-xl" />
+                                    <Icon icon="simple-icons:x" className="text-lg text-white/80 group-hover:text-white transition-colors" />
                                 </div>
                                 <span className="text-xs font-semibold uppercase tracking-widest">Twitter (X)</span>
                             </a>
-                            <a href="https://www.facebook.com/" className="group flex items-center gap-4 text-slate-500 hover:text-white transition-colors">
+                            <a href="https://www.facebook.com/" className="group flex items-center gap-4 text-slate-400 hover:text-white transition-colors">
                                 <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/20 group-hover:bg-white/5 transition-all">
-                                    <Icon icon="ri:facebook-fill" className="text-xl" />
+                                    <Icon icon="simple-icons:facebook" className="text-lg text-white/80 group-hover:text-white transition-colors" />
                                 </div>
                                 <span className="text-xs font-semibold uppercase tracking-widest">Facebook</span>
                             </a>
