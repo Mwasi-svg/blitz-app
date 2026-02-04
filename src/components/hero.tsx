@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 import { MobileAppAnimation } from './hero_animations';
 
 export const Hero = () => {

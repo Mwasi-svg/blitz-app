@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 
 export const Footer = () => {
     return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 import { Contact } from './contact_form';
 
 interface FAQItem {
