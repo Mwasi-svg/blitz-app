@@ -65,11 +65,11 @@ export const PlatformCTA = () => {
                         className="relative z-10 text-center lg:text-left"
                     >
                         <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
-                            Bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"><i>Milima Messenger</i></span> to <br className="hidden lg:block" /> your workspace.
+                            Bring <span className="text-[#6EC6E6]"><i>Millima Messaging</i></span> to <br className="hidden lg:block" /> your workspace.
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                            Experience the power of Millima Messenger on any device. <br className="hidden lg:block" />
+                            Experience the power of Millima Messaging on any device. <br className="hidden lg:block" />
                             Download on your preferred platform and stay connected anywhere.
                         </motion.p>
 
@@ -91,7 +91,7 @@ export const PlatformCTA = () => {
 
                                 {/* macOS */}
                                 <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                    <Icon icon="simple-icons:appstore" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
+                                    <Icon icon="simple-icons:apple" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
                                     <span className="text-base font-medium text-slate-200 group-hover:text-white">macOS</span>
                                     <span className="text-xs text-slate-500 group-hover:text-slate-400">Universal Binary</span>
                                 </a>
@@ -126,7 +126,7 @@ export const PlatformCTA = () => {
                                         <span className="text-[11px] font-bold text-blue-400 tracking-wider uppercase">100% Secure & Private</span>
                                     </div>
                                     <p className="text-sm text-slate-400 max-w-sm leading-relaxed lg:text-left text-center">
-                                        Deploy <span className="text-white font-medium">Millima Messenger</span> on your own private corporate servers for absolute data sovereignty and control.
+                                        Deploy <span className="text-white font-medium">Millima Messaging</span> on your own private corporate servers for absolute data security and control.
                                     </p>
                                 </div>
                             </div>

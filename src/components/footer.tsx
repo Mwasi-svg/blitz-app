@@ -9,7 +9,7 @@ export const Footer = () => {
                     {/* Left Column: Branding & Navigation */}
                     <div className="flex flex-row items-start gap-6 md:gap-10 md:pr-12">
                         {/* Logo on the left */}
-                        <div className="shrink-0 h-16 sm:h-24 lg:h-28 pt-2">
+                        <div className="shrink-0 h-20 sm:h-32 lg:h-40 pt-2">
                             <img src="/images/logo.png" alt="Blitz Logo" className="h-full w-auto object-contain" />
                         </div>
 
