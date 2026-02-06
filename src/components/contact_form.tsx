@@ -35,29 +35,35 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
         const publicKey = '_-8JNO8FxnE7ekwmB';
 
         try {
-            // first one: send the lead to support team
+            // 1. Send the main lead to support team (This is the critical one)
             await emailjs.send(
                 serviceId,
                 'template_mgimyiq',
                 {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    phone_number: formData.phone,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
                     message: formData.message,
+                    time: new Date().toLocaleString(),
                 },
                 publicKey
             );
 
-            // second one: send the auto-reply to the user
-            await emailjs.send(
-                serviceId,
-                'template_wild9dd',
-                {
-                    to_name: formData.name,
-                    to_email: formData.email,
-                },
-                publicKey
-            );
+            // 2. Attempt to send the auto-reply to the user (Non-critical)
+            try {
+                await emailjs.send(
+                    serviceId,
+                    'template_wild9dd',
+                    {
+                        to_name: formData.name,
+                        to_email: formData.email,
+                    },
+                    publicKey
+                );
+            } catch (autoReplyError) {
+                // If auto-reply fails, we just log it but don't fail the whole form
+                console.warn('EmailJS Auto-reply error (Verify template_wild9dd exists):', autoReplyError);
+            }
 
             setStatus('success');
             setTimeout(() => {
@@ -65,7 +71,8 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                 resetForm();
             }, 3000);
         } catch (error) {
-            console.error('EmailJS Error:', error);
+            // Log the full error to console for debugging
+            console.error('EmailJS PRIMARY Error:', error);
             setStatus('error');
             setTimeout(() => setStatus('idle'), 5000);
         }
