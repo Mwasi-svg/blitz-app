@@ -27,7 +27,7 @@ export const PlatformCTA = () => {
     };
 
     return (
-        <section id="platforms" className="py-20 lg:py-32 px-4 sm:px-6 bg-blitz-bg overflow-hidden">
+        <section id="platforms" className="py-20 lg:py-32 px-4 sm:px-6 bg-[#263241b0] overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

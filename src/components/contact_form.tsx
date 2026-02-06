@@ -35,7 +35,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
         const publicKey = '_-8JNO8FxnE7ekwmB';
 
         try {
-            // 1. Send the main lead to support team (This is the critical one)
+            // 1. Send the main lead to support team 
             await emailjs.send(
                 serviceId,
                 'template_mgimyiq',
@@ -49,7 +49,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                 publicKey
             );
 
-            // 2. Attempt to send the auto-reply to the user (Non-critical)
+            // 2. Attempt to send the auto-reply to the user
             try {
                 await emailjs.send(
                     serviceId,
