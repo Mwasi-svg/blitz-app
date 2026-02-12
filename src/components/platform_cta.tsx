@@ -65,7 +65,7 @@ export const PlatformCTA = () => {
                         className="relative z-10 text-center lg:text-left"
                     >
                         <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
-                            Bring <span className="text-[#6EC6E6]"><i>Millima Messaging</i></span> to <br className="hidden lg:block" /> your workspace.
+                            Bring <span className="text-[#6EC6E6]"><i>Milima Messaging</i></span> to <br className="hidden lg:block" /> your workspace.
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
